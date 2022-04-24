@@ -5,12 +5,12 @@ import logo from "../../../images/Logo/logo.png";
 const Header = () => {
   return (
     <div className="Header">
-      <nav class="bg-[#1A2952] h-20 flex justify-between items-center border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
+      <nav class="bg-[#1A2952] h-26 flex justify-between items-center border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
           <img
             src={logo}
-            class="mr-3 h-6 sm:h-9"
-            style={{ width: "20%", height: "auto" }}
+            class="mr-3 h-6 sm:h-9 cursor-pointer"
+            style={{ width: "15%", height: "auto" }}
             alt="Business Consulting Logo"
           />
           <button
@@ -47,12 +47,22 @@ const Header = () => {
             </svg>
           </button>
           <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
-            <ul class="flex flex-col mt-4 md:flex-row text-white md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-              <Link to="/">Home</Link>
-              <Link to="/about">About</Link>
-              <Link to="/services">Services</Link>
-              <Link to="/blogs">Blogs</Link>
-              <Link to="/contact">Contact</Link>
+            <ul class="flex flex-col mt-4 md:flex-row text-white md:space-x-8 md:mt-0 md:text-sm md:font-medium ">
+              <Link className="text-xl " to="/">
+                Home
+              </Link>
+              <Link className="text-xl" to="/about">
+                About
+              </Link>
+              <Link className="text-xl" to="/services">
+                Services
+              </Link>
+              <Link className="text-xl" to="/blogs">
+                Blogs
+              </Link>
+              <Link className="text-xl" to="/contact">
+                Contact
+              </Link>
             </ul>
           </div>
         </div>
