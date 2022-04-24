@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../../images/Logo/logo.png";
 
 const Header = () => {
   return (
-    <div className="Header bg-[#1A2952] px-12 ">
+    <div className="Header bg-[#1A2952] px-12  fixed-top">
       <nav class=" h-24 flex justify-between items-center border-gray-200 sm:px-4 py-2.5 rounded dark:bg-gray-800">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
           <p className="text-white sm:text-xl md:text-3xl lg:text-4xl font-bold">
