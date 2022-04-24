@@ -1,7 +1,19 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import person from "../../../images/about/person.jpg";
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  const navigateToServices = () => {
+    navigate("/services");
+  };
+  const navigateToContact = () => {
+    navigate("/contact");
+  };
+  const navigateToAbout = () => {
+    navigate("/about");
+  };
   return (
     <div>
       {/* banner area  */}
@@ -13,7 +25,10 @@ const Home = () => {
             Growth Consulting <br /> Service
           </h2>
           <div>
-            <button className="bg-blue-700 text-white rounded-tl-2xl rounded-br-2xl sm:px-8 sm:py-2 md:px-12 md:py-3 sm:text-sm md:text-base lg:text-xl font-bold my-5">
+            <button
+              onClick={navigateToServices}
+              className="bg-blue-700 text-white rounded-tl-2xl rounded-br-2xl sm:px-8 sm:py-2 md:px-12 md:py-3 sm:text-sm md:text-base lg:text-xl font-bold my-5"
+            >
               Grow your Business
             </button>
           </div>
@@ -23,7 +38,10 @@ const Home = () => {
           <p className="md:text-xl lg:text-2xl mr-3 text-white font-bold">
             Looking for a First-Class Business Plan Consultant?
           </p>
-          <button className="bg-yellow-400 text-[#1A2952] rounded sm:px-8 sm:py-2 md:px-12 md:py-3 sm:text-sm md:text-base lg:text-xl font-bold  ml-3">
+          <button
+            onClick={navigateToContact}
+            className="bg-yellow-400 text-[#1A2952] rounded sm:px-8 sm:py-2 md:px-12 md:py-3 sm:text-sm md:text-base lg:text-xl font-bold  ml-3"
+          >
             Contact
           </button>
         </div>
@@ -37,7 +55,7 @@ const Home = () => {
         </h2>
         <div className="h-2 w-20 bg-yellow-400 rounded-tl-2xl rounded-br-2xl mx-auto mb-5"></div>
         <div class="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:items-center">
-          <div class="lg:col-start-2 md:pl-20 md:mt-[-50px] md:ml-[-50px]">
+          <div class="lg:col-start-2 md:pl-20 sm:text-center sm:mt-0  sm:ml-0 md:ml-[-50px]">
             <h4 class="text-4xl leading-8 font-extrabold  dark:text-white tracking-tight sm:leading-9 ">
               Unique Business Idea
             </h4>
@@ -56,7 +74,11 @@ const Home = () => {
                 parts of sentences
               </p>
             </p>
-            <button className="bg-blue-700 text-white rounded-tl-2xl rounded-br-2xl sm:px-8 sm:py-2 md:px-12 md:py-3 sm:text-sm md:text-base lg:text-xl font-bold my-5">
+
+            <button
+              onClick={navigateToAbout}
+              className="bg-blue-700 text-white rounded-tl-2xl rounded-br-2xl sm:px-8 sm:py-2 md:px-12 md:py-3 sm:text-sm md:text-base lg:text-xl font-bold my-5"
+            >
               To know more
             </button>
           </div>
