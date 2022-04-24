@@ -9,6 +9,7 @@ import Services from "./components/Pages/Services/Services";
 import Footer from "./components/Shared/Footer/Footer";
 import Header from "./components/Shared/Header/Header";
 import SignIn from "./components/Shared/Login/SignIn/SignIn";
+import SignUp from "./components/Shared/Login/SignUp/SignUp";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/blogs" element={<Blogs></Blogs>}></Route>
           <Route path="/contact" element={<Contact></Contact>}></Route>
           <Route path="/login" element={<SignIn></SignIn>}></Route>
+          <Route path="/signup" element={<SignUp></SignUp>}></Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>
       </div>
