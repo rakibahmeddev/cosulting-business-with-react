@@ -94,7 +94,7 @@ const Home = () => {
       </div>
 
       {/* services area  */}
-      <div className="py-20 bg-[#F9F9FB]">
+      <div className="py-20 bg-slate-50">
         <h2 className="text-[#1A2952] leading-normal sm:text-3xl xsm:text-xl md:text-4xl lg:text-6xl text-center font-bold mb-5">
           Services
         </h2>

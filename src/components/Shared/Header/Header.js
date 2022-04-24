@@ -1,12 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const reloadHomePage = () => {
+    navigate("/");
+  };
   return (
     <div className="Header bg-[#1A2952] px-12  fixed-top">
       <nav class=" h-24 flex justify-between items-center border-gray-200 sm:px-4 py-2.5 rounded dark:bg-gray-800">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
-          <p className="text-white sm:text-xl md:text-3xl lg:text-4xl font-bold">
+          <p
+            onClick={reloadHomePage}
+            className="text-white sm:text-xl md:text-3xl lg:text-4xl font-bold cursor-pointer"
+          >
             Consulting <span className="text-yellow-400">Business</span>
           </p>
           <button
