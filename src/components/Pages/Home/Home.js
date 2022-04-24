@@ -49,14 +49,14 @@ const Home = () => {
 
       {/* About  */}
 
-      <div class="relative bg-white dark:bg-gray-800 sm:px-20 md:px-20 p-4 my-20">
+      <div className="relative bg-white dark:bg-gray-800 sm:px-20 md:px-20 p-4 my-20">
         <h2 className="text-[#1A2952] leading-normal sm:text-3xl xsm:text-xl md:text-4xl lg:text-6xl text-center font-bold mb-5">
           About
         </h2>
         <div className="h-2 w-20 bg-yellow-400 rounded-tl-2xl rounded-br-2xl mx-auto mb-5"></div>
-        <div class="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:items-center">
-          <div class="lg:col-start-2 md:pl-20 sm:text-center sm:mt-0  sm:ml-0 md:ml-[-50px]">
-            <h4 class="text-4xl leading-8 font-extrabold  dark:text-white tracking-tight sm:leading-9 ">
+        <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:items-center">
+          <div className="lg:col-start-2 md:pl-20 sm:text-center sm:mt-0  sm:ml-0 md:ml-[-50px]">
+            <h4 className="text-4xl leading-8 font-extrabold  dark:text-white tracking-tight sm:leading-9 ">
               Unique Business Idea
             </h4>
             <p className="text-base my-5 leading-normal">
@@ -82,12 +82,12 @@ const Home = () => {
               To know more
             </button>
           </div>
-          <div class="mt-10 -mx-4 md:-mx-12 relative lg:mt-0 lg:col-start-1">
+          <div className="mt-10 -mx-4 md:-mx-12 relative lg:mt-0 lg:col-start-1">
             <img
               src={person}
               style={{ width: "50%" }}
               alt="illustration"
-              class="relative mx-auto shadow-lg  rounded w-auto"
+              className="relative mx-auto shadow-lg  rounded w-auto"
             />
           </div>
         </div>
@@ -102,16 +102,16 @@ const Home = () => {
 
         {/* grid  */}
 
-        <div class="sm:flex flex-wrap justify-center items-center text-center gap-8">
-          <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 bg-blue-700 text-white mt-6  shadow-lg rounded-lg ">
-            <div class="flex-shrink-0">
-              <div class="flex items-center mx-auto justify-center h-12 w-12 rounded-md bg-yellow-400 text-white">
+        <div className="sm:flex flex-wrap justify-center items-center text-center gap-8">
+          <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 bg-blue-700 text-white mt-6  shadow-lg rounded-lg ">
+            <div className="flex-shrink-0">
+              <div className="flex items-center mx-auto justify-center h-12 w-12 rounded-md bg-yellow-400 text-white">
                 <svg
                   width="20"
                   height="20"
                   color="black"
                   fill="currentColor"
-                  class="h-6 w-6"
+                  className="h-6 w-6"
                   viewBox="0 0 1792 1792"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -119,10 +119,10 @@ const Home = () => {
                 </svg>
               </div>
             </div>
-            <h3 class="text-2xl sm:text-xl  font-semibold  py-4">
+            <h3 className="text-2xl sm:text-xl  font-semibold  py-4">
               Personal Advice
             </h3>
-            <p class="text-md   py-4">
+            <p className="text-md   py-4">
               Audit and assurance is all about meticulous data analysis.
               Everything needs to be checked, double checked, and triple
               checked.
@@ -131,15 +131,15 @@ const Home = () => {
               Learn more
             </button>
           </div>
-          <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 bg-blue-700 text-white mt-6  shadow-lg rounded-lg ">
-            <div class="flex-shrink-0">
-              <div class="flex items-center mx-auto justify-center h-12 w-12 rounded-md bg-yellow-400 text-white">
+          <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 bg-blue-700 text-white mt-6  shadow-lg rounded-lg ">
+            <div className="flex-shrink-0">
+              <div className="flex items-center mx-auto justify-center h-12 w-12 rounded-md bg-yellow-400 text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
                   height="20"
                   color="black"
-                  class="h-6 w-6"
+                  className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -153,10 +153,10 @@ const Home = () => {
                 </svg>
               </div>
             </div>
-            <h3 class="text-2xl sm:text-xl  font-semibold  py-4">
+            <h3 className="text-2xl sm:text-xl  font-semibold  py-4">
               Bonds & Commodities
             </h3>
-            <p class="text-md   py-4">
+            <p className="text-md   py-4">
               Bonds and commodities are much more stable than stocks and trades.
               We allow our clients to invest in the right bonds & commodities.
             </p>
@@ -164,14 +164,14 @@ const Home = () => {
               Learn more
             </button>
           </div>
-          <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 bg-blue-700 text-white mt-6  shadow-lg rounded-lg ">
-            <div class="flex-shrink-0">
-              <div class="flex items-center mx-auto justify-center h-12 w-12 rounded-md bg-yellow-400 text-white">
+          <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 bg-blue-700 text-white mt-6  shadow-lg rounded-lg ">
+            <div className="flex-shrink-0">
+              <div className="flex items-center mx-auto justify-center h-12 w-12 rounded-md bg-yellow-400 text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
                   height="20"
-                  class="h-6 w-6"
+                  className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -186,10 +186,10 @@ const Home = () => {
                 </svg>
               </div>
             </div>
-            <h3 class="text-2xl sm:text-xl  font-semibold  py-4">
+            <h3 className="text-2xl sm:text-xl  font-semibold  py-4">
               Strategic Planning
             </h3>
-            <p class="text-md   py-4">
+            <p className="text-md   py-4">
               We work with our clients and do a deep analysis of their business.
               We help prepare possible outcomes to different decisions.
             </p>
