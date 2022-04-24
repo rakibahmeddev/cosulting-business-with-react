@@ -6,6 +6,7 @@ import Contact from "./components/Pages/Contact/Contact";
 import Home from "./components/Pages/Home/Home";
 import NotFound from "./components/Pages/NotFound/NotFound";
 import Services from "./components/Pages/Services/Services";
+import Footer from "./components/Shared/Footer/Footer";
 import Header from "./components/Shared/Header/Header";
 
 function App() {
@@ -24,7 +25,9 @@ function App() {
           <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>
       </div>
-      <div className="Footer"></div>
+      <div className="Footer">
+        <Footer></Footer>
+      </div>
     </div>
   );
 }

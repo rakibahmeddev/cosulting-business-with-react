@@ -4,15 +4,12 @@ import logo from "../../../images/Logo/logo.png";
 
 const Header = () => {
   return (
-    <div className="Header">
-      <nav class="bg-[#1A2952] h-26 flex justify-between items-center border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
+    <div className="Header bg-[#1A2952] px-12 ">
+      <nav class=" h-24 flex justify-between items-center border-gray-200 sm:px-4 py-2.5 rounded dark:bg-gray-800">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
-          <img
-            src={logo}
-            class="mr-3 h-6 sm:h-9 cursor-pointer"
-            style={{ width: "15%", height: "auto" }}
-            alt="Business Consulting Logo"
-          />
+          <p className="text-white sm:text-xl md:text-3xl lg:text-4xl font-bold">
+            Consulting <span className="text-yellow-400">Business</span>
+          </p>
           <button
             data-collapse-toggle="mobile-menu"
             type="button"
