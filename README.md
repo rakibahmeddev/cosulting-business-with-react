@@ -13,3 +13,4 @@
 - React js
 - TailwindCSS
 - React Router
+- Firebase
