@@ -1,13 +1,58 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useRef } from "react";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import auth from "../../../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const SignIn = () => {
   const navigate = useNavigate();
-
   const navigateToSignUp = () => {
     navigate("/signup");
   };
+
+  const emailRef = useRef("");
+  const passwordRef = useRef("");
+
+  const location = useLocation();
+
+  let from = location.state?.from?.pathname || "/";
+  let errorElement;
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
+  if (loading || sending) {
+    return <p className="text-xl">Loading</p>;
+  }
+
+  if (user) {
+    navigate(from, { replace: true });
+  }
+
+  if (error) {
+    errorElement = <p className="text-danger">Error: {error?.message}</p>;
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+    signInWithEmailAndPassword(email, password);
+    navigate("/");
+  };
+
+  const resetPassword = async () => {
+    const email = emailRef.current.value;
+    if (email) {
+      await sendPasswordResetEmail(email);
+    } else {
+    }
+  };
+
   return (
     <div className="bg-slate-100 py-[100px]">
       <div className="flex flex-col w-full  max-w-md  mx-auto px-4 py-5  rounded-lg shadow bg-white dark:bg-gray-800 sm:px-6 md:px-8 lg:px-10">
@@ -43,16 +88,22 @@ const SignIn = () => {
 
             <div className="flex items-center mb-6 -mt-4">
               <div className="flex ml-auto mt-3">
-                <a
-                  href="#"
+                <Link
+                  to=""
+                  onClick={resetPassword}
                   className="inline-flex text-base font-normal text-gray-500 sm:text-sm dark:text-gray-100 hover:text-gray-700 dark:hover:text-white"
                 >
                   Forgot Your Password?
-                </a>
+                </Link>
               </div>
+            </div>
+            {/* error  */}
+            <div>
+              <p className="text-orange-700">{errorElement}</p>
             </div>
             <div className="flex w-full">
               <button
+                onClick={handleSubmit}
                 type="submit"
                 className="py-2 px-4  bg-blue-700 hover:bg-blue-600 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
               >

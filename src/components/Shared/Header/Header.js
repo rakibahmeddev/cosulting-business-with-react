@@ -1,11 +1,18 @@
+import { signOut } from "firebase/auth";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
+import auth from "../../../firebase.init";
 
 const Header = () => {
   const navigate = useNavigate();
-
   const reloadHomePage = () => {
     navigate("/");
+  };
+
+  const [user] = useAuthState(auth);
+  const handleSignOut = () => {
+    signOut(auth);
   };
   return (
     <div className="Header bg-[#1A2952] px-12  fixed-top">
@@ -67,12 +74,22 @@ const Header = () => {
               <Link className="text-xl" to="/contact">
                 Contact
               </Link>
-              <Link
-                className="text-xl  bg-yellow-400 text-[#1A2952] rounded sm:px-8 sm:py-2 md:px-12 md:py-2 font-bold  ml-3"
-                to="/login"
-              >
-                Sign In
-              </Link>
+              {user ? (
+                <Link
+                  onClick={handleSignOut}
+                  className="text-xl  bg-yellow-400 text-[#1A2952] rounded sm:px-8 sm:py-2 md:px-12 md:py-2 font-bold  ml-3"
+                  to="/login"
+                >
+                  Sign Out
+                </Link>
+              ) : (
+                <Link
+                  className="text-xl  bg-yellow-400 text-[#1A2952] rounded sm:px-8 sm:py-2 md:px-12 md:py-2 font-bold  ml-3"
+                  to="/login"
+                >
+                  Sign In
+                </Link>
+              )}
             </ul>
           </div>
         </div>

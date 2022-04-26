@@ -1,10 +1,27 @@
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../../../../firebase.init";
 
 const SignUp = () => {
   const navigate = useNavigate();
   const navigateToSignIn = () => {
     navigate("/login");
+  };
+
+  const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(
+    auth,
+    { sendEmailVerification: true }
+  );
+
+  const handleRegister = async (event) => {
+    event.preventDefault();
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    await createUserWithEmailAndPassword(name, email, password);
+    navigate("/");
   };
 
   return (
@@ -14,11 +31,12 @@ const SignUp = () => {
           <p className="text-2xl text-center font-medium">Create an Account</p>
         </div>
         <div className="mt-8">
-          <form>
+          <form onSubmit={handleRegister}>
             <div className="flex flex-col mb-2">
               <div className="flex relative ">
                 <input
                   type="text"
+                  name="name"
                   id="sign-in-name"
                   required
                   className=" rounded flex-1 appearance-none border border-gray3400 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-blue-700 focus:border-transparent mb-2"
@@ -29,6 +47,7 @@ const SignUp = () => {
             <div className="flex flex-col mb-2">
               <div className="flex relative ">
                 <input
+                  name="email"
                   type="email"
                   id="sign-in-email"
                   required
@@ -40,6 +59,7 @@ const SignUp = () => {
             <div className="flex flex-col mb-2">
               <div className="flex relative ">
                 <input
+                  name="password"
                   type="password"
                   id="sign-in-password"
                   required
