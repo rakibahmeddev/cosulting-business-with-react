@@ -1,13 +1,19 @@
 import React from "react";
 import google from "../../../../images/socialLogin/google.png";
 import github from "../../../../images/socialLogin/github.png";
+import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import auth from "../../../../firebase.init";
 
 const SocialLogin = () => {
+  const [signInWithGoogle] = useSignInWithGoogle(auth);
   return (
     <div className="social-login">
       {/* google sign in  */}
       <div className="my-3">
-        <button className="border bg-black text-white font-medium rounded-lg flex justify-center items-center d-block mx-auto px-5 py-2">
+        <button
+          onClick={() => signInWithGoogle()}
+          className="border bg-black text-white font-medium rounded-lg flex justify-center items-center d-block mx-auto px-5 py-2"
+        >
           <img
             style={{ width: "30px", height: "30px" }}
             src={google}

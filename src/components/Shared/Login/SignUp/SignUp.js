@@ -1,10 +1,8 @@
-import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const SignUp = () => {
   const navigate = useNavigate();
-
   const navigateToSignIn = () => {
     navigate("/login");
   };
@@ -16,7 +14,7 @@ const SignUp = () => {
           <p className="text-2xl text-center font-medium">Create an Account</p>
         </div>
         <div className="mt-8">
-          <form action="#" autoComplete="off">
+          <form>
             <div className="flex flex-col mb-2">
               <div className="flex relative ">
                 <input
@@ -52,13 +50,8 @@ const SignUp = () => {
             </div>
 
             <div className="flex items-center mb-6 -mt-4">
-              <div className="flex ml-auto mt-3">
-                <a
-                  href="#"
-                  className="inline-flex text-base font-normal text-gray-500 sm:text-sm dark:text-gray-100 hover:text-gray-700 dark:hover:text-white"
-                >
-                  Forgot Your Password?
-                </a>
+              <div className="flex mx-auto mt-3">
+                <p className="text-orange-700"></p>
               </div>
             </div>
             <div className="flex w-full">
@@ -66,7 +59,7 @@ const SignUp = () => {
                 type="submit"
                 className="py-2 px-4  bg-blue-700 hover:bg-blue-600 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
               >
-                Login
+                Sign Up
               </button>
             </div>
           </form>

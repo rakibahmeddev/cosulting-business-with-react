@@ -71,7 +71,7 @@ const SignIn = () => {
               onClick={navigateToSignUp}
               className="text-blue-700 font-bold ml-2"
             >
-              Sign In
+              Sign Up
             </span>
           </Link>
         </div>
