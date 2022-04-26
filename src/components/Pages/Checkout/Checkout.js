@@ -2,7 +2,7 @@ import React from "react";
 
 const Checkout = () => {
   return (
-    <div className="bg-slate-50 sm:px-44 md:px-56 lg:px-96">
+    <div className="bg-slate-50 sm:px-44 md:px-44 lg:px-[450px]">
       <div className="col-span-1 lg:col-span-6 py-20">
         <h4 className="text-3xl font-medium text-gray-700 text-center mb-5">
           Checkout information

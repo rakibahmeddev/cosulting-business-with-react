@@ -7,6 +7,11 @@
 - Services section
 - Footer
 - Dynamic year in footer
+- Services Page
+- About Page
+- Blogs page
+- Contact page
+- Checkout page
 
 ### What I have used
 
