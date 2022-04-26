@@ -1,7 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
 import auth from "../../../../firebase.init";
 
 const SignUp = () => {
@@ -10,17 +13,28 @@ const SignUp = () => {
     navigate("/login");
   };
 
-  const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(
-    auth,
-    { sendEmailVerification: true }
-  );
+  const [createUserWithEmailAndPassword, user, loading] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const [updateProfile, updating] = useUpdateProfile(auth);
+
+  if (loading || updating) {
+    return <p>Loading...</p>;
+  }
+
+  if (user) {
+    console.log("user", user);
+  }
 
   const handleRegister = async (event) => {
     event.preventDefault();
     const name = event.target.name.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
+    // const agree = event.target.terms.checked;
+
     await createUserWithEmailAndPassword(name, email, password);
+    await updateProfile({ displayName: name });
+    console.log("Updated profile");
     navigate("/");
   };
 
@@ -31,7 +45,7 @@ const SignUp = () => {
           <p className="text-2xl text-center font-medium">Create an Account</p>
         </div>
         <div className="mt-8">
-          <form onSubmit={handleRegister}>
+          <form>
             <div className="flex flex-col mb-2">
               <div className="flex relative ">
                 <input
@@ -76,6 +90,7 @@ const SignUp = () => {
             </div>
             <div className="flex w-full">
               <button
+                onClick={handleRegister}
                 type="submit"
                 className="py-2 px-4  bg-blue-700 hover:bg-blue-600 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
               >
